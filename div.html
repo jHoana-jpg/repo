@@ -1,5 +1,6 @@
 <html>
     <head>
+
     <style>
         #mensaje{
             color: #F00;
@@ -25,14 +26,23 @@
         color:#000;
     }
     </style>
+    <script src="jquery.js"></script>
+    <script>
+        function eliminaAlumnos(){
+            $('.alumno').hide();
+            $('#mensaje').html('Tu registro fue eliminado...');
+            setTimeout("$('#mensaje').html('');", 5000);
+        }
+    </script>
     </head>
 <body>
     <div class="alumno"> Ruben Maldonado </div>
     <div class="alumno reprobado"> Aaron Jimenez </div>
     <div class="alumno">Marisela Guzman</div>
     <div class="maestro" id="maestro1"> Patricia Lopez </div>
-    <div class="maestro" id="maestro2"> Luis Casillas </div>
-    <div id="mensaje">Aqui va el mensaje</div>
+    <div class="maestro" id="maestro2"> Luis Casillas </div><br><br>
+    <input onclick="eliminaAlumnos();" type="submit" value="Eliminar">
+    <div id="mensaje"></div>
 </body>
 </html>
 
