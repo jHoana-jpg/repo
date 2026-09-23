@@ -31,8 +31,24 @@
         function eliminaAlumnos(){
             $('.alumno').hide();
             $('#mensaje').html('Tu registro fue eliminado...');
+           // $('#mensaje').html('< img src=    />');
             setTimeout("$('#mensaje').html('');", 5000);
         }
+        /*
+         function eliminaMaestro(){
+            $('#maestro1').hide();
+            $('#mensaje').html('Tu registro fue eliminado...');
+            //$('#mensaje').html('< img src=    />');
+            setTimeout("$('#mensaje').html('');", 5000);
+        }
+        */
+        function eliminaMaestro(id){
+            $('#maestro'+id).hide();
+            $('#mensaje').html('Tu registro fue eliminado...');
+            //$('#mensaje').html('< img src=    />');
+            setTimeout("$('#mensaje').html('');", 5000);
+        }
+
     </script>
     </head>
 <body>
@@ -41,7 +57,7 @@
     <div class="alumno">Marisela Guzman</div>
     <div class="maestro" id="maestro1"> Patricia Lopez </div>
     <div class="maestro" id="maestro2"> Luis Casillas </div><br><br>
-    <input onclick="eliminaAlumnos();" type="submit" value="Eliminar">
+    <input onclick="eliminaMaestro(2);" type="submit" value="Eliminar"/><br>
     <div id="mensaje"></div>
 </body>
 </html>
