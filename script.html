@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Formularios</title>
+<script src="jquery.js"></script>
+<script>
+
+function valida(){
+    var user=$("#user").val();
+    alert(user);
+}
+
+
+
+
+
+function miAlerta(){
+alert('Hola...');
+}
+//miAlerta();
+ var nombre     ='Ruben';
+ var apellido   ="Maldonado";
+ var calificacion =59;
+ function misDatos (nombre, calificacion){
+ alert('Bienvenido '+nombre+', tu calificacion es: ' +calificacion);
+ }
+ //misDatos(nombre, calificacion) ;
+ </script>
+</head>
+<body>
+<form name="forma01" id="forma01" method="post" action="recibe.php">
+   <input type="text" name="user" value="@" id="user" /><br>
+   <input type="text" name="pass" placeholder="Escribe tu password"/> <br>
+<select name="rol" id="rol">
+   <option value="0"> Selecciona </option>
+   <option value="1"> Gerente </option>
+   <option value="2"> Ejecutivo </option>
+</select>
+<br>
+<input type="submit" onclick="valida()"  value="Enviar"/>
+</form>
+
+  </body>
+</html>
