@@ -1,0 +1,57 @@
+<HTML>
+<head> 
+    <title>Validación de Formularios</title>
+    <script src="jquery.js"></script>
+    <style>
+        .campo {
+            margin-bottom: 10px;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body> 
+
+    <!-- 1. Campo de Correo (Faltaba) -->
+    <div class="campo">
+        <label>Correo:</label>
+        <input type="text" id="correo">
+    </div>
+
+    <div class="campo">
+        <label>Password:</label>
+        <input type="password" id="pass">
+    </div>
+
+    <div class="campo">
+        <label>Rol:</label>
+        <select id="rol">
+            <option value="0">Selecciona</option>
+            <option value="1">Gerente</option>
+            <option value="2">Ejecutivo</option>
+        </select>
+    </div>
+
+    <!-- 2. Botón con evento onclick para llamar a la función -->
+    <button id="btnValidar" onclick="validarFormulario()">Validar formulario</button>
+    
+    <div id="resultado"></div>
+
+<script>
+    function validarFormulario() {
+        var correo = $('#correo').val().trim();
+        var pass = $('#pass').val().trim();
+        var rol = $('#rol').val();
+
+        // 3. Sintaxis del IF corregida con paréntesis y operador OR (||)
+        if (correo === '' || pass === '' || rol === '0') {
+            $('#resultado').text('Faltan campos por llenar');
+        } else {
+            $('#resultado').text('Campos llenos');
+        }
+    }
+</script>
+</body>
+</HTML>
