@@ -1,6 +1,6 @@
-<HTML>
+<html>
 <head> 
-    <title>Validación de Formularios</title>
+    <title>Validación de Formularios 2</title>
     <script src="jquery.js"></script>
     <style>
         .campo {
@@ -9,13 +9,12 @@
         #resultado {
             margin-top: 15px;
             font-weight: bold;
-            line-height: 30px;
+            line-height: 25px;
         }
     </style>
 </head>
 <body> 
 
-    
     <div class="campo">
         <label>Correo:</label>
         <input type="text" id="correo">
@@ -35,7 +34,6 @@
         </select>
     </div>
 
-    
     <button id="btnValidar" onclick="validarFormulario()">Validar formulario</button>
     
     <div id="resultado"></div>
@@ -44,13 +42,20 @@
     function validarFormulario() {
         var correo = $('#correo').val().trim();
         var pass = $('#pass').val().trim();
-        var rol = $('#rol').val();
-        if (correo === '' || pass === '' || rol === '0') {
-            $('#resultado').text('Faltan campos por llenar');
+        var rolValor = $('#rol').val();
+        var rolTexto = $('#rol option:selected').text();
+    
+        if (correo === '' || pass === '' || rolValor === '0') {
+            $('#resultado').html('Faltan campos por llenar');
         } else {
-            $('#resultado').text('Campos llenos');
+            // Despliegue de los textos en el contenedor div (Punto 3 y 4)
+            var resumen = '<strong>Correo:</strong> ' + correo + '<br>' +
+                          '<strong>Password:</strong> ' + pass + '<br>' +
+                          '<strong>Rol:</strong> ' + rolTexto;
+            
+            $('#resultado').html(resumen);
         }
     }
 </script>
 </body>
-</HTML>
+</html>
